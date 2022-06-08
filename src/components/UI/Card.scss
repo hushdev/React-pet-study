@@ -1,0 +1,59 @@
+.card {
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.card_dark {
+  background: rgb(48, 48, 48);
+  box-shadow: 0 0 5px #000000;
+  max-height: 450px;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.expenseDate {
+  border: 3px solid #ffffff;
+  background: #3b3b3b;
+  border-radius: 15px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  margin-right: 10px;
+  transition: 0.2s ease;
+  
+  &:hover {
+    background: #1e1e1e;
+  }
+
+  &-month {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  &-day {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: regular;
+  }
+
+  &-year {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+
+.expense-item {
+  width: 100%;
+  background: #6c6c6c;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  transition: .2s ease;
+}
