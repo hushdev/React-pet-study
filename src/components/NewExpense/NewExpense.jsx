@@ -1,5 +1,4 @@
 import React from "react";
-import "./NewExpense.scss";
 import ExpenseForm from "./ExpenseForm.jsx";
 import Card from "../UI/Card";
 
@@ -15,10 +14,10 @@ const NewExpense = (props) => {
     };
     props.onSaveExpense(newData)
   };
-
+  
   return (
     <Card className="new-expense">
-      <ExpenseForm onSaveExpense={saveExpense} />
+      <ExpenseForm onSaveExpense={saveExpense} onCancel={props.onCancel}/>
     </Card>
   );
 };
