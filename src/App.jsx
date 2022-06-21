@@ -1,9 +1,11 @@
-import React from "react";
-import ExpenseItem from "./components/Expenses/ExpenseItem";
-import Card from "./components/UI/Card";
+import React, {useState} from "react";
+import ExpensesList from './components/Expenses/ExpensesList';
 import NewExpense from "./components/NewExpense/NewExpense";
+import ExpensesFilter from './components/Expenses/ExpensesFilter';
 
 const App = () => {
+  const [yearFilter, setYearFilter] = useState('2022')
+
   const expenses = [
     { title: "TV", date: new Date(2022, 3, 28), price: 22.2 },
     { title: "PS", date: new Date(2022, 3, 28), price: 21.2 },
@@ -13,24 +15,19 @@ const App = () => {
   ];
 
   const pushExpense = (data) => {
-    console.log('From App.js');
     console.log(data);
+  }
+
+  const changeYear = (year) => {
+    setYearFilter(year);
   }
 
   return (
     <div className="container">
       <h2 className="h2">Expenses Manager App</h2>
       <NewExpense onSaveExpense={pushExpense}/>
-      <Card className="card_dark">
-        {expenses.map((item) => (
-          <ExpenseItem
-            title={item.title}
-            date={item.date}
-            price={item.price}
-            key={item.title}
-          />
-        ))}
-      </Card>
+      <ExpensesFilter onChangeYear={changeYear}/>
+      <ExpensesList expenses={expenses} year={yearFilter}/>
     </div>
   );
 }
