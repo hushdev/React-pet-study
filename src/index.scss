@@ -22,14 +22,16 @@ body {
   margin: 0 auto;
 }
 
-.row {
+.nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
 }
 
 .h2 {
   padding: 10px 0;
-  margin: 10px 15px;
+  margin: 10px 0;
   color: #ffffff;
 }
 

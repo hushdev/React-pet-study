@@ -6,7 +6,7 @@ import ExpensesChart from "./ExpensesChart";
 const ExpensesList = (props) => {
   let year = props.year;
 
-  let items = props.expenses
+  let filteredItems = props.expenses
     .filter((item) => item.date.getFullYear().toString() === year)
     .map((item) => (
       <ExpenseItem
@@ -18,13 +18,13 @@ const ExpensesList = (props) => {
     ));
 
   let noItemsText = (
-    <span className="card_dark-span">There is no any expense</span>
+    <span className="card_dark-span">The list is empty</span>
   );
 
   return (
     <>
-      <ExpensesChart expenses={items}/>
-      <Card className="card_dark">{items.length ? items : noItemsText}</Card>
+      <ExpensesChart expenses={filteredItems}/>
+      <Card className="card_dark">{filteredItems.length ? filteredItems : noItemsText}</Card>
     </>
   );
 };
