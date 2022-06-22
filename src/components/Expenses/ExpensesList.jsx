@@ -1,12 +1,13 @@
 import React from "react";
 import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
+import ExpensesChart from "./ExpensesChart";
 
 const ExpensesList = (props) => {
   let year = props.year;
 
   let items = props.expenses
-    .filter((item) => item.date.getFullYear() == year)
+    .filter((item) => item.date.getFullYear().toString() === year)
     .map((item) => (
       <ExpenseItem
         key={item.id}
@@ -21,7 +22,10 @@ const ExpensesList = (props) => {
   );
 
   return (
-    <Card className="card_dark">{items.length ? items : noItemsText}</Card>
+    <>
+      <ExpensesChart expenses={items}/>
+      <Card className="card_dark">{items.length ? items : noItemsText}</Card>
+    </>
   );
 };
 

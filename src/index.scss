@@ -22,9 +22,14 @@ body {
   margin: 0 auto;
 }
 
+.row {
+  display: flex;
+  align-items: center;
+}
+
 .h2 {
   padding: 10px 0;
-  margin: 10px 0;
+  margin: 10px 15px;
   color: #ffffff;
 }
 
@@ -47,6 +52,7 @@ body {
 // BASIC CLASSES
 .btn {
   width: 150px;
+  height: 40px;
   text-transform: uppercase;
   font-weight: 500;
   border: 0;
