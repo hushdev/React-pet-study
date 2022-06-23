@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ExpenseForm.scss";
+import styled from "styled-components";
 
 const ExpenseForm = (props) => {
   const [title, setTitle] = useState("");
@@ -29,13 +29,13 @@ const ExpenseForm = (props) => {
   };
 
   return (
-    <form onSubmit={submitHandler} className="form">
-      <div className="form-controls">
-        <div className="form-control">
+    <StyledForm onSubmit={submitHandler}>
+      <div className="controls">
+        <div className="control">
           <label>Title</label>
           <input type="text" value={title} onChange={onTitleChange} />
         </div>
-        <div className="form-control">
+        <div className="control">
           <label>$ amount</label>
           <input
             type="number"
@@ -45,7 +45,7 @@ const ExpenseForm = (props) => {
             step="0.01"
           />
         </div>
-        <div className="form-control">
+        <div className="control">
           <label>Date</label>
           <input
             type="date"
@@ -56,12 +56,46 @@ const ExpenseForm = (props) => {
           />
         </div>
       </div>
-      <div className="form-btns">
+      <div className="btns">
         <button className="btn">Add</button>
-        <button onClick={props.onCancel} className="btn btn-primary">Cancel</button>
+        <button onClick={props.onCancel} className="btn btn-primary">
+          Cancel
+        </button>
       </div>
-    </form>
+    </StyledForm>
   );
 };
+
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  & .controls {
+    max-width: 200px;
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+  }
+  & .control {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    label {
+      color: #6c6c6c;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+    input {
+      border: 0;
+      border-radius: 10px;
+      padding: 10px;
+      background: #ffffff;
+      box-shadow: 0 0 3px #646464;
+      outline: 0;
+    }
+  }
+  & .btns {
+    display: flex;
+  }
+`;
 
 export default ExpenseForm;

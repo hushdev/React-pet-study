@@ -1,8 +1,19 @@
 import React from "react";
-import "./Card.scss";
+import styled from "styled-components";
+// import "./Card.scss";
 
 const Card = (props) => {
-  return <div className={`card ${props.className}`}>{props.children}</div>;
+  return (
+    <StyledCard bgColor={props.bgColor}>
+      {props.children}
+    </StyledCard>
+  );
 };
+
+const StyledCard = styled.div`
+  border-radius: 10px;
+  padding: 15px;
+  background-color: ${props => props.bgColor};
+`;
 
 export default Card;

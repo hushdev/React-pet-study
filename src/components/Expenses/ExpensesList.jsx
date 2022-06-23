@@ -24,7 +24,7 @@ const ExpensesList = (props) => {
   return (
     <>
       <ExpensesChart expenses={filteredItems}/>
-      <Card className="card_dark">{filteredItems.length ? filteredItems : noItemsText}</Card>
+      <Card bgColor="#6c6c6c">{filteredItems.length ? filteredItems : noItemsText}</Card>
     </>
   );
 };

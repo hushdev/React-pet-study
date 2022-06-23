@@ -8,9 +8,9 @@ const ExpenseDate = (props) => {
   const year = props.date.getFullYear();
   return (
     <Card className="expenseDate">
-      <div className="expenseDate-month">{month}</div>
-      <div className="expenseDate-day">{day}</div>
-      <div className="expenseDate-year">{year}</div>
+      <div className="month">{month}</div>
+      <div className="day">{day}</div>
+      <div className="year">{year}</div>
     </Card>
   );
 }

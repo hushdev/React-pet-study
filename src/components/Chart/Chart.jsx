@@ -1,14 +1,13 @@
 import React from "react";
-import "./Chart.scss";
-
+import styled from "styled-components";
 import ChartBar from "./ChartBar";
 
 const Chart = (props) => {
-  const pointsValues = props.points.map(point => point.value)
-  const maxPointValue = Math.max(...pointsValues)
+  const pointsValues = props.points.map((point) => point.value);
+  const maxPointValue = Math.max(...pointsValues);
 
   return (
-    <div className="chart">
+    <StyledChart>
       {props.points.map((point) => (
         <ChartBar
           key={point.label}
@@ -17,8 +16,19 @@ const Chart = (props) => {
           maxValue={maxPointValue}
         />
       ))}
-    </div>
+    </StyledChart>
   );
 };
+
+const StyledChart = styled.div`
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: #f8dfff;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  height: 10rem;
+  margin-bottom: 20px;
+`;
 
 export default Chart;

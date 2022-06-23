@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ExpensesFilter.scss";
+import styled from "styled-components";
 
 const ExpensesFilter = (props) => {
   const years = [2022, 2021, 2020, 2019, 2018];
@@ -15,15 +15,41 @@ const ExpensesFilter = (props) => {
   ));
 
   return (
-    <div className="expenses-filter">
-      <div className="expenses-filter__control">
+    <StyledExpenseFilter>
+      <div className="control">
         <label>Filter by year</label>
         <select onChange={changeHandler} value={props.initialYear}>
           {options}
         </select>
       </div>
-    </div>
+    </StyledExpenseFilter>
   );
 };
+
+const StyledExpenseFilter = styled.div`
+  color: white;
+  padding: 0 1rem;
+  margin-top: 20px;
+
+  & .control {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+  }
+
+  & label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  & select {
+    font: inherit;
+    padding: 0.5rem 3rem;
+    font-weight: bold;
+    border-radius: 6px;
+  }
+`;
 
 export default ExpensesFilter;
