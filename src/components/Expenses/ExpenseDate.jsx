@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../UI/Card";
+import styled from "styled-components";
 
 const ExpenseDate = (props) => {
   // Date props
@@ -7,12 +7,17 @@ const ExpenseDate = (props) => {
   const day = props.date.toLocaleString("en-US", { day: "2-digit" });
   const year = props.date.getFullYear();
   return (
-    <Card className="expenseDate">
-      <div className="month">{month}</div>
-      <div className="day">{day}</div>
-      <div className="year">{year}</div>
-    </Card>
+    <StyledExpenseDateWrap>
+      {month} {day}, {year}
+    </StyledExpenseDateWrap>
   );
-}
+};
+
+const StyledExpenseDateWrap = styled.div`
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-self: flex-end;
+`;
 
 export default ExpenseDate;

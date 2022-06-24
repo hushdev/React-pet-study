@@ -16,7 +16,7 @@ const NewExpense = (props) => {
   };
   
   return (
-    <Card className="new-expense">
+    <Card bgColor="#2d2d2d" className="new-expense">
       <ExpenseForm onSaveExpense={saveExpense} onCancel={props.onCancel}/>
     </Card>
   );
